@@ -8,7 +8,6 @@ from tensorflow.keras.lay
 start_date = '2010-01-01'
 end_date = '2021-12-31'
 data = yf.download(company_symbol, start=start_date, end=end_date)
-
 data = data[['Close']]
 plt.figure(figsize=(12, 6))
 plt.title(f'{company_symbol} Stock Price')
@@ -51,3 +50,6 @@ plt.plot(data.index[-len(predictions):], data['Close'].values[-len(predictions):
 plt.plot(data.index[-len(predictions):], predictions, label='Predicted Prices', linestyle='--')
 plt.legend()
 plt.show()
+
+
+#
